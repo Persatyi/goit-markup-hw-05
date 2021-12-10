@@ -83,6 +83,10 @@ img {
   margin-left: 93px;
 }
 
+.site-nav .item {
+  position: relative;
+}
+
 .site-nav .item:not(:first-child) {
   margin-left: 50px;
 }
@@ -104,6 +108,17 @@ img {
 
 .site-nav .link.current {
   color: var(--accent-color);
+}
+
+.link.current::after {
+  content: '';
+  width: 100%;
+  height: 4px;
+  background: var(--accent-color);
+  border-radius: 2px;
+  display: block;
+  position: absolute;
+  bottom: -31px;
 }
 
 /*--------- Contacts ---------*/
