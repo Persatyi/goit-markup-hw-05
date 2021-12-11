@@ -65,7 +65,16 @@
         <section class="hero">
             <div class="container">
                 <h1 class="hero-title">Эффективные решения для вашего бизнеса</h1>
-                <button type="button" class="button primary">Заказать услугу</button>
+                <button class="button primary" type="button" data-open-modal>Заказать услугу</button>
+            </div>
+            <div class="backdrop is-hidden" data-backdrop>
+                <div class="modal">
+                    <button class="close-modal-btn" type="button" data-close-modal>
+                        <svg>
+                            <use href="./images/sprite/icons.svg#icon-close-btn" width="14" height="14"></use>
+                        </svg>
+                    </button>
+                </div>
             </div>
         </section>
         <!-- Advantagies -->
@@ -400,6 +409,26 @@
             </div>
         </div>
     </footer>
+    <script>
+        const refs = {
+            openModalBtn: document.querySelector("[data-open-modal]"),
+            closeModalBtn: document.querySelector("[data-close-modal]"),
+            backdrop: document.querySelector("[data-backdrop]"),
+        };
+
+        refs.openModalBtn.addEventListener("click", toggleModal);
+        refs.closeModalBtn.addEventListener("click", toggleModal);
+
+        refs.backdrop.addEventListener("click", logBackdropClick);
+
+        function toggleModal() {
+            refs.backdrop.classList.toggle("is-hidden");
+        }
+
+        function toggleModalClick() {
+            console.log();
+        }
+    </script>
 </body>
 
 </html>
