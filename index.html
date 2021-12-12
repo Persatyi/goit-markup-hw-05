@@ -65,11 +65,11 @@
         <section class="hero">
             <div class="container">
                 <h1 class="hero-title">Эффективные решения для вашего бизнеса</h1>
-                <button class="button primary" type="button" data-open-modal>Заказать услугу</button>
+                <button class="button primary" type="button" data-modal-open>Заказать услугу</button>
 
-                <div class="backdrop is-hidden" data-backdrop>
+                <div class="backdrop is-hidden" data-modal>
                     <div class="modal">
-                        <button class="close-modal-btn" type="button" data-close-modal>
+                        <button class="close-modal-btn" type="button" data-modal-close>
                             <svg width="14" height="14">
                                 <use href="./images/sprite/icons.svg#icon-close-btn"></use>
                             </svg>
@@ -411,26 +411,6 @@
         </div>
     </footer>
     <script src="./js/modal.js"></script>
-    <script>
-        const refs = {
-            openModalBtn: document.querySelector("[data-open-modal]"),
-            closeModalBtn: document.querySelector("[data-close-modal]"),
-            backdrop: document.querySelector("[data-backdrop]"),
-        };
-
-        refs.openModalBtn.addEventListener("click", toggleModal);
-        refs.closeModalBtn.addEventListener("click", toggleModal);
-
-        refs.backdrop.addEventListener("click", logBackdropClick);
-
-        function toggleModal() {
-            refs.backdrop.classList.toggle("is-hidden");
-        }
-
-        function toggleModalClick() {
-            console.log();
-        }
-    </script>
 </body>
 
 </html>
